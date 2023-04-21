@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const JsonModel = require("../models/jsonModel.js");
+const TeamSeasonModel = require("../models/TeamSeasonModel.js");
 
-router.route("/create").post((req, res)=>{
+router.route("/createteamseason").post((req, res)=>{
     const title = req.body.title;
     const content = req.body.content;
-    const jsonData = new JsonModel({
+    const TeamSeasonData = new TeamSeasonModel({
         title,
         content
     })
 
-    jsonData.save();
+    TeamSeasonData.save();
 });
 
 module.exports = router;

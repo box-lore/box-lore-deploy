@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
-    "dev": "concurrently \"npm start\" \"npm run client" 
+    "dev": "concurrently \"npm start\" \"npm run client",
+    "getstandings": "node scripts/getStandings.js",
+    "getteamstats": "node scripts/getTeamStats.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
     "csv-writer": "^1.6.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "fs": "^0.0.1-security",
     "get-apis": "^1.0.0",
     "mongoose": "^7.0.3",
     "mysql": "^2.18.1",
