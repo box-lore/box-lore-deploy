@@ -11,6 +11,8 @@ const port = 3001;
 
 app.use(cors());
 app.use(express.json());
+app.use("/", require("./routes/TeamSeasonRoute.js"));
+app.use("/", require("./routes/StandingsRoute.js"));
 
 // Using mongoose to connect to MongoDB box-lore collection
 const mongoURI = `${process.env.DB_CONNECT}`;
@@ -40,17 +42,3 @@ app.get('/getteamseason/:title', async (req, res) => {
     }
 });
 
-// Get route for Betting Odds models in MongoDB
-const BettingOdds = require('./models/BettingOddsModel.js')
-app.get('/getbettingodds', async (req, res) => {
-    try{
-        const { title } = req.params;
-        const season = await BettingOdds.find();
-        res.json(season);
-        // console.log(res.json(season));
-    }
-    catch (error){
-        console.log(error);
-        res.status(500).json({ message: error.message });
-    }
-});
