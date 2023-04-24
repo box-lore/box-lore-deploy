@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
-    "dev": "concurrently \"npm start --ignore client\" \"npm run client",
+    "dev": "concurrently \"npm start --ignore client\" \"npm run client\"",
     "getstandings": "node scripts/getStandings.js",
     "getteamstats": "node scripts/getTeamStats.js"
   },

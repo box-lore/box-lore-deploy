@@ -19,6 +19,17 @@ class StandingsTable extends Component {
         this.isClicked = this.isClicked.bind(this)
         // Binding this keyword
     }
+
+    //componentDidMount() {
+        //axios.get(`/getstandings/standings`)
+            //.then(response => {
+            //    standings_data=response
+            //})
+            //.catch(error => {
+            //    console.error(error);
+            //});
+    //}
+
     isClicked() {
         console.log(this.state.toggle)
         this.setState(prevState => ({
