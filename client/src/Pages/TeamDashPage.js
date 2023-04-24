@@ -1,6 +1,5 @@
 import './TeamDashPage.css';
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react';
 
 import TeamDash from '../Components/TeamDash/TeamDash.js'
 

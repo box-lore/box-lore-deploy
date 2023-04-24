@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { useTable } from 'react-table';
+// import { useTable } from 'react-table';
 import './StandingsTable.css'
 
 //const seasons = require('../../jsons/seasons.json');
@@ -51,7 +51,7 @@ class StandingsTable extends Component {
                         <th>L</th>
                         <th>Pct</th>
                     </tr>
-                    {standings_data.filter(obj => obj.group.name == this.checkState(this.state.toggle)).map((val, key) => {
+                    {standings_data.filter(obj => obj.group.name === this.checkState(this.state.toggle)).map((val, key) => {
                         return (
                             <tr className="Values" key={key}>
                                 <td>{val.position}</td>

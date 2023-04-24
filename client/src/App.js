@@ -1,6 +1,5 @@
 import './App.css';
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react';
 
 import AboutPage from './Pages/AboutPage.js';
 import HomePage from './Pages/HomePage.js';
@@ -10,9 +9,7 @@ import Layout from './Pages/Layout.js';
 
 import {
   // Navigation
-  BrowserRouter, Routes, Route, Link,
-  // Page Transitions
-  Switch, useLocation, useHistory
+  BrowserRouter, Routes, Route,
 } from 'react-router-dom';
 import { AnimatePresence } from "framer-motion";
 

@@ -1,6 +1,5 @@
 import './HomePage.css';
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom/client';
+import React from 'react';
 
 import StandingsTable from '../Components/StandingsTable/StandingsTable.js';
 import UpcomingGames from '../Components/UpcomingGames/UpcomingGames.js';

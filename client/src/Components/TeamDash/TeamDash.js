@@ -34,6 +34,7 @@ class TeamDash extends Component {
         .catch(error => {
             console.error(error);
         });
+        this.render();
     }
     changeSeason(newSeason) {
         currentSeason = newSeason;
@@ -41,7 +42,6 @@ class TeamDash extends Component {
             stateSeason : newSeason
         });
         this.componentDidMount();
-        this.render();
     }
     seasonDrop(){
         return(
