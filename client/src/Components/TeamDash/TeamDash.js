@@ -24,30 +24,31 @@ class TeamDash extends Component {
                       seasonData : []}
         this.changeSeason = this.changeSeason.bind(this)
     }
-    componentDidMount() {
-        axios.get(`/getteamseason/${this.state.stateSeason}`)
-            .then(response => {
-            this.setState({
-                seasonData: response.data,
-            });
-        })
-        .catch(error => {
-            console.error(error);
+    async getData(){
+        await axios.get(`/getteamseason/${this.state.stateSeason}`)
+        .then(response => {
+        this.setState({
+            seasonData: response.data,
         });
-        this.render();
+    })
+    .catch(error => {
+        console.error(error);
+    });
+    this.render();
     }
     changeSeason(newSeason) {
         currentSeason = newSeason;
         this.setState({
             stateSeason : newSeason
         });
-        this.componentDidMount();
+        this.getData();
+        this.setState();
     }
     seasonDrop(){
         return(
             <div>
                 <label>
-                    Select Season to view:  
+                    Select Season to view:
                     <select id = 'seasonDrop' classname = 'seasonDrop' onClick={e=>{this.changeSeason(e.target.value)}}>
                         {allSeasons.map((val) => {
                             return(
@@ -84,7 +85,7 @@ class TeamDash extends Component {
             <tbody>
                 {allTeams.map(currTeam =>(
                     this.state.seasonData.map(teamSeason => (
-                        <tr>
+                        <tr className = "TeamDashValues">
                             <td>{teamSeason.content[0][currTeam]['Per Game']['Team']}</td>
                             <td>{teamSeason.content[0][currTeam]['Advanced']['W']}</td>
                             <td>{teamSeason.content[0][currTeam]['Advanced']['L']}</td>

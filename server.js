@@ -11,11 +11,15 @@ const port = 3001;
 
 app.use(cors());
 app.use(express.json());
-app.use("/", require("./routes/TeamSeasonRoute.js"));
 
 // Using mongoose to connect to MongoDB box-lore collection
 const mongoURI = `${process.env.DB_CONNECT}`;
 mongoose.connect(mongoURI).then(() => console.log('Connected to database'));
+
+// Send route for Team Season Statistics
+app.use("/", require("./routes/TeamSeasonRoute.js"));
+// Send route for Betting Odds
+app.use("/", require("./routes/BettingOddsRoute.js"));
 
 app.listen(3001, () => {
     console.log("Server running on port 3001");
@@ -36,3 +40,17 @@ app.get('/getteamseason/:title', async (req, res) => {
     }
 });
 
+// Get route for Betting Odds models in MongoDB
+const BettingOdds = require('./models/BettingOddsModel.js')
+app.get('/getbettingodds', async (req, res) => {
+    try{
+        const { title } = req.params;
+        const season = await BettingOdds.find();
+        res.json(season);
+        // console.log(res.json(season));
+    }
+    catch (error){
+        console.log(error);
+        res.status(500).json({ message: error.message });
+    }
+});

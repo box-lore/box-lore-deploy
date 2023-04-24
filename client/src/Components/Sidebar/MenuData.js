@@ -6,13 +6,19 @@ export const MenuData = [
         icon: "fa-solid fa-house-user ",
     },
     {
-        title: "Team Dashboards ",
+        title: "Team Dashboard ",
         url: "teamdashpage",
         cName: "nav-links",
         icon: "fa-solid fa-basketball-ball ",
     },
     {
-        title: "Player Dashboards ",
+        title: "Player Dashboard ",
+        url: "#",
+        cName: "nav-links",
+        icon: "fa-solid fa-user-alt ",
+    },
+    {
+        title: "Betting Dashboard ",
         url: "#",
         cName: "nav-links",
         icon: "fa-solid fa-user-alt ",
