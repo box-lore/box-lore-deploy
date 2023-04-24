@@ -23,9 +23,10 @@ app.listen(3001, () => {
 
 // Get route for Team Season Statistics models in MongoDB
 const TeamSeason = require('./models/TeamSeasonModel.js')
-app.get('/getteamseason', async (req, res) => {
+app.get('/getteamseason/:title', async (req, res) => {
     try{
-        const season = await TeamSeason.find();
+        const { title } = req.params;
+        const season = await TeamSeason.find({ title });
         res.json(season);
         // console.log(res.json(season));
     }

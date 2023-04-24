@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import './TeamDash.css'
 
@@ -25,7 +25,7 @@ class TeamDash extends Component {
         this.changeSeason = this.changeSeason.bind(this)
     }
     componentDidMount() {
-        axios.get('/getteamseason')
+        axios.get(`/getteamseason/${this.state.stateSeason}`)
             .then(response => {
             this.setState({
                 seasonData: response.data,
@@ -40,6 +40,7 @@ class TeamDash extends Component {
         this.setState({
             stateSeason : newSeason
         });
+        this.componentDidMount();
         this.render();
     }
     seasonDrop(){
@@ -116,6 +117,9 @@ class TeamDash extends Component {
                 <p></p>
                 <div className='TeamDashTable'>
                     {this.statsTable()}
+                </div>
+                <div>
+                    {this.state.stateSeason}
                 </div>
             </div>
         );
