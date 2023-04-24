@@ -58,6 +58,55 @@ class TeamDash extends Component {
             </div>
         )
     }
+    statsTable(){
+        return(
+            <table>
+            <thead>
+                <th>Team</th>
+                <th>W</th>
+                <th>L</th>
+                <th>ORT</th>
+                <th>DRT</th>
+                <th>FG%</th>
+                <th>2P%</th>
+                <th>3P%</th>
+                <th>FT%</th>
+                <th>ORB</th>
+                <th>DRB</th>
+                <th>TRB</th>
+                <th>AST</th>
+                <th>TOV</th>
+                <th>STL</th>
+                <th>BLK</th>
+                <th></th>
+            </thead>
+            <tbody>
+                {allTeams.map(currTeam =>(
+                    this.state.seasonData.map(teamSeason => (
+                        <tr>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['Team']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Advanced']['W']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Advanced']['L']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Advanced']['ORtg']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Advanced']['DRtg']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['FG%']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['2P%']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['3P%']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['FT%']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['ORB']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['DRB']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['TRB']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['AST']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['TOV']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['BLK']}</td>
+                            <td>{teamSeason.content[0][currTeam]['Per Game']['STL']}</td>
+                        </tr>
+                        ))
+                ))}
+            </tbody>
+            </table>
+        )
+    }
     render(){
         return(
             <div>
@@ -66,26 +115,7 @@ class TeamDash extends Component {
                 </div>
                 <p></p>
                 <div className='TeamDashTable'>
-                <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Content</th>
-        </tr>
-      </thead>
-      <tbody>
-        {this.state.seasonData.map(teamSeason => (
-          <tr key={teamSeason._id}>
-            <td>{teamSeason.title}</td>
-            <td>{teamSeason.content[0]['Minnesota Timberwolves']['Per Game']['FG']}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-                </div>
-                <div>
-                    {this.state.stateSeason}
-                    {/* {this.state.seasonData.value} */}
+                    {this.statsTable()}
                 </div>
             </div>
         );
@@ -93,24 +123,3 @@ class TeamDash extends Component {
 }
 
 export default TeamDash;
-
-{/* <tr className="TeamDashHeaders">
-        <th></th>
-        <th>Team</th>
-        <th>W</th>
-        <th>L</th>
-        <th>ORT</th>
-        <th>DRT</th>
-        <th>FG%</th>
-        <th>2P%</th>
-        <th>3P%</th>
-        <th>FT%</th>
-        <th>ORB</th>
-        <th>DRB</th>
-        <th>TRB</th>
-        <th>AST</th>
-        <th>TOV</th>
-        <th>STL</th>
-        <th>BLK</th>
-        <th></th>
-    </tr> */}
