@@ -4,7 +4,6 @@ const cors = require('cors')
 const fs = require('fs')
 const mongoose = require("mongoose")
 const dotenv = require("dotenv")
-const TeamSeasonModel = require('./models/TeamSeasonModel.js')
 dotenv.config()
 
 const app = express()
@@ -14,19 +13,25 @@ app.use(cors());
 app.use(express.json());
 app.use("/", require("./routes/TeamSeasonRoute.js"));
 
+// Using mongoose to connect to MongoDB box-lore collection
 const mongoURI = `${process.env.DB_CONNECT}`;
 mongoose.connect(mongoURI).then(() => console.log('Connected to database'));
-
-app.get('/', (req, res) => {
-    res.send("Server port 3001 test")
-})
 
 app.listen(3001, () => {
     console.log("Server running on port 3001");
 })
 
-app.get('/getteamseason/:season', (req, res) => {
-    TeamSeasonModel.findOne({ season: req.params.season })
-      .then(products => res.json(teamseasonmodels))
-      .catch(err => res.status(500).send(err));
+// Get route for Team Season Statistics models in MongoDB
+const TeamSeason = require('./models/TeamSeasonModel.js')
+app.get('/getteamseason', async (req, res) => {
+    try{
+        const season = await TeamSeason.find();
+        res.json(season);
+        // console.log(res.json(season));
+    }
+    catch (error){
+        console.log(error);
+        res.status(500).json({ message: error.message });
+    }
 });
+

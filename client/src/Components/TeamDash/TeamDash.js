@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import axios from 'axios';
 import './TeamDash.css'
 
@@ -20,8 +20,20 @@ class TeamDash extends Component {
     constructor(props){
         super(props);
         this.state = {stateSeason : currentSeason,
-                      stateTeams : currentTeams}
+                      stateTeams : currentTeams,
+                      seasonData : []}
         this.changeSeason = this.changeSeason.bind(this)
+    }
+    componentDidMount() {
+        axios.get('/getteamseason')
+            .then(response => {
+            this.setState({
+                seasonData: response.data,
+            });
+        })
+        .catch(error => {
+            console.error(error);
+        });
     }
     changeSeason(newSeason) {
         currentSeason = newSeason;
@@ -29,52 +41,6 @@ class TeamDash extends Component {
             stateSeason : newSeason
         });
         this.render();
-    }
-    getTeamStats(team, season){
-        const teamSeason = axios.get('/getteamseason/${season}')
-            .catch(error => console.error(error));
-
-        console.log(teamSeason);
-
-        return(
-            <tr className="TeamDashValues">
-                <td>{teamSeason.features}</td>
-            </tr>
-        )
-    }
-    getTeamsStatsTable(){
-        return(
-            <table>
-                <tr className="TeamDashHeaders">
-                    <th></th>
-                    <th>Team</th>
-                    <th>W</th>
-                    <th>L</th>
-                    <th>ORT</th>
-                    <th>DRT</th>
-                    <th>FG%</th>
-                    <th>2P%</th>
-                    <th>3P%</th>
-                    <th>FT%</th>
-                    <th>ORB</th>
-                    <th>DRB</th>
-                    <th>TRB</th>
-                    <th>AST</th>
-                    <th>TOV</th>
-                    <th>STL</th>
-                    <th>BLK</th>
-                    <th></th>
-                </tr>
-                <tbody>
-                    {this.state.stateSeason}
-                    {this.state.stateTeams.map((val) => {
-                        return (
-                            this.getTeamStats(val, this.state.stateSeason)
-                        )
-                    })}
-                </tbody>
-            </table>
-        )
     }
     seasonDrop(){
         return(
@@ -100,10 +66,26 @@ class TeamDash extends Component {
                 </div>
                 <p></p>
                 <div className='TeamDashTable'>
-                    {this.getTeamsStatsTable(this.state.stateTeams, this.state.stateSeason)}
+                <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        {this.state.seasonData.map(teamSeason => (
+          <tr key={teamSeason._id}>
+            <td>{teamSeason.title}</td>
+            <td>{teamSeason.content[0]['Minnesota Timberwolves']['Per Game']['FG']}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
                 </div>
                 <div>
                     {this.state.stateSeason}
+                    {/* {this.state.seasonData.value} */}
                 </div>
             </div>
         );
@@ -111,3 +93,24 @@ class TeamDash extends Component {
 }
 
 export default TeamDash;
+
+{/* <tr className="TeamDashHeaders">
+        <th></th>
+        <th>Team</th>
+        <th>W</th>
+        <th>L</th>
+        <th>ORT</th>
+        <th>DRT</th>
+        <th>FG%</th>
+        <th>2P%</th>
+        <th>3P%</th>
+        <th>FT%</th>
+        <th>ORB</th>
+        <th>DRB</th>
+        <th>TRB</th>
+        <th>AST</th>
+        <th>TOV</th>
+        <th>STL</th>
+        <th>BLK</th>
+        <th></th>
+    </tr> */}

@@ -27,7 +27,7 @@ const options = {
     'X-RapidAPI-Host': 'nba-team-stats.p.rapidapi.com'
   }
 };
-  
+
 axios.request(options).then(function (response) {
       const postData = {
         title: options.params.leagueYear,

@@ -5,6 +5,6 @@ const TeamSeasonSchema = {
     content: Array
 }
 
-const TeamSeasonModel = mongoose.model("TeamSeasonModel", TeamSeasonSchema)
+const TeamSeasonModel = mongoose.model("TeamSeason", TeamSeasonSchema)
 
 module.exports = TeamSeasonModel;
