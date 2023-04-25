@@ -13,6 +13,9 @@ app.use(cors());
 app.use(express.json());
 app.use("/", require("./routes/TeamSeasonRoute.js"));
 
+// User Registration
+app.use("/", require("./routes/userRoute.js"));
+
 // Using mongoose to connect to MongoDB box-lore collection
 const mongoURI = `${process.env.DB_CONNECT}`;
 mongoose.connect(mongoURI).then(() => console.log('Connected to database'));
