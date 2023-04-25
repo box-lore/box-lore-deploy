@@ -10,7 +10,8 @@
     "dev": "concurrently \"npm start --ignore client\" \"npm run client\"",
     "getstandings": "node scripts/getStandings.js",
     "getteamstats": "node scripts/getTeamStats.js",
-    "getbettingodds": "node scripts/getBettingOdds.js"
+    "getbettingodds": "node scripts/getBettingOdds.js",
+    "getnews": "node scripts/News.js"
   },
   "repository": {
     "type": "git",

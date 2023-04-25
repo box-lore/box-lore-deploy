@@ -24,6 +24,8 @@ app.use("/", require("./routes/TeamSeasonRoute.js"));
 // Send route for Betting Odds
 app.use("/", require("./routes/BettingOddsRoute.js"));
 
+app.use("/", require("./routes/News.js"))
+
 app.listen(3001, () => {
     console.log("Server running on port 3001");
 })
