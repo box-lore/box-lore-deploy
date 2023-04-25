@@ -8,6 +8,7 @@ import BettingDashPage from './Pages/BettingDashPage';
 import SignupPage from './Pages/SignupPage/SignupPage';
 import Layout from './Pages/Layout.js';
 import Guide from './Components/Guide/Guide.js';
+import LoginPage from './Pages/LoginPage/LoginPage';
 
 import {
   // Navigation
@@ -29,6 +30,7 @@ function App() {
               <Route path="teamdashpage" element={<TeamDashPage />} />
               <Route path="bettingdashpage" element={<BettingDashPage />}/>
               <Route path="signuppage" element={<SignupPage />}/>
+              <Route path="loginpage" element={<LoginPage />}/>
             </Route>
           </Routes>
         </BrowserRouter>

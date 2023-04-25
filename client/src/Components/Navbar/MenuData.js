@@ -25,7 +25,7 @@ export const MenuData = [
     },
     {
         title: " Profile",
-        url: "#",
+        url: "loginpage",
         cName:"nav-links",
         icon:"fa-solid fa-user-alt  "
     },
