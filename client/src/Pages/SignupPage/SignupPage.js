@@ -1,87 +1,106 @@
-import React, { useState } from 'react';
+import React, { Component, useState, useHistory } from 'react';
 import './FormStyle.css';
-// import LoginPage from "./LoginPage";
+import SignupInputs from './SignupInputs';
+import SignupHeading from './SignupHeading';
+import axios from 'axios';
 
+const SignupPage = () => {
+  const [values, setValues] = useState({
+    username:"",
+    age:"",
+    password:"",
+    securityquestion:""
+  });
 
-export default function SignupPage() {
-
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const signup = (e) => {
-    e.preventDefault();
-    const username = document.getElementById("username").value;
-    const age = parseInt(document.getElementById("age").value);
-    const password = document.getElementById("password").value;
-    const confirm_password = document.getElementById("confirm-password").value;
-
-    // Check if all fields are valid
-    let isValid = true;
-    const userRegex = /[\d+\w]+/; 
-    if (!userRegex.test(username)) {
-      setErrorMessage("Username must include at least 1 letter follow by 1 number, and must not exceed 12 characters.");
-      isValid = false;
+  const inputs = [
+    {
+      id: 1,
+      name: "username",
+      type: "text",
+      placeholder: "Username",
+      label: "Username",
+      pattern: "^[A-Za-z0-9]{3,14}$",
+      errorMessage: "Username should be 3-14 characters and include at least 1 letter and 1 number",
+      required: true,
+    },
+    {
+      id: 2,
+      name: "age",
+      type: "text",
+      placeholder: "Age",
+      label: "Age",
+      pattern: "^(1[89]|[2-9]\\d)$",
+      errorMessage: "User should be at least 18 years old",
+      required: true
+    },
+    {
+      id: 3,
+      name: "password",
+      type: "text",
+      placeholder: "Password",
+      label: "password",
+      pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$#^&.*])[A-Za-z\\d$#^&.*]{5,}$",
+      errorMessage: "Password should have at least 5 characters and should include at least both lowercase and uppercase letter, 1 number, and 1 special character",
+      required: true
+    },
+    {
+      id: 4,
+      name: "security question",
+      type: "text",
+      placeholder: "What is your favorite number? (No more than 10 digits)",
+      label: "security question",
+      pattern: "^[0-9]{0,10}$",
+      errorMessage: "No more than 10 digits",
+      required: true
     }
-    if (age < 18) {
-      setErrorMessage("You must be at least 18 years old to sign up.");
-      isValid = false;
-    }
-    if (password !== confirm_password) {
-      setErrorMessage("Passwords do not match.");
-      isValid = false;
-    }
-    if (isValid) {
-      const userData = {
-        username: username,
-        age: age,
-        password: password
-      };
-      localStorage.setItem(username, JSON.stringify(userData));
-      setErrorMessage("");
-      window.location.href = '/LoginPage'; // Redirect to login page
-    }
+  ];
+
+  const onChange = (e) => {
+    
+    setValues({...values, [e.target.name]: e.target.value});
+    
+  };
+
+  console.log(values);
+
+   
+  const handleSubmit = async (e) => {
+    e.preventDefault();  
+    
+    const newUser = {
+      username: values.username,
+      age: values.age,
+      password: values.password,
+      securityquestion: values.securityquestion
+    };
+    
+    await axios.post('http://localhost:3001/createUser', newUser)
+    
   };
 
   return (
-    <div className="form">
-      <div className="form-title">
-        <h1>Sign Up</h1>
-        <p>Fill in the following to sign up!</p>
+    <div className='main'>
+      <div className='formHeading'>
+        <SignupHeading />
+        <hr />
       </div>
-      <hr />
-      <div className="form-input">
-        <form id="signup-form">
-          <label>
-            Username:
-            <input type="text" id="username" required /><br />
-            <span id="user-detail">
-              Username must include at least
-              1 letter and 1 number. No more than 12 characters.
-            </span>
-            <span className="error-message">{errorMessage}</span>
-          </label>
-          <br />
-          <label>
-            Age:
-            <input type="number" id="age" required /><br />
-            Numbers only
-            <span className="error-message">{errorMessage}</span>
-          </label>
-          <br />
-          <label>
-            Password:
-            <input type="password" id="password" required />
-            <span className="error-message">{errorMessage}</span>
-          </label>
-          <br />
-          <label>
-            Confirm Password:
-            <input type="password" id="confirm-password" required />
-            <span className="error-message">{errorMessage}</span>
-          </label>
-          <br />
-          <button id="submit" onClick={signup}>Submit</button>
+      
+      <div className='formInputs'>
+        <form onSubmit={handleSubmit}>
+          {inputs.map((input) => (
+            <SignupInputs 
+              key={input.id} 
+              {...input} 
+              value={values[input.name]}
+              onChange={onChange}  
+            />
+          ))}
+          
+          <button id='submit'>Submit</button>
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default SignupPage;
