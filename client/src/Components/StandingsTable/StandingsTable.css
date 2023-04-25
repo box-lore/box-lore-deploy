@@ -40,9 +40,12 @@ table {
     align-items: center;
     background-color: rgb(228, 219, 219);
     box-shadow: 0 10px 20px rgba(144, 140, 140, 0.25);
+   
     background-image: url('https://static.vecteezy.com/system/resources/previews/007/470/301/original/basketball-ball-on-dark-background-3d-render-free-photo.jpg');
+    /*  background-image: url('https://cdn.wallpapersafari.com/57/15/tVAyui.jpg'); */
     background-size: cover;
     color: aliceblue;
+    background-attachment: fixed;
 }
 
 .Headers{

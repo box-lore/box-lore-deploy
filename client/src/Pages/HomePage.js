@@ -11,9 +11,14 @@ function HomePage() {
       <div className="StandingsTable">
         <StandingsTable />
         <p/>
-        <News />
         <UpcomingGames />
+        <News />
+        
       </div>
+
+      <footer className="Footer">
+        &copy; SWE Project
+      </footer>
       
     </div>
     );

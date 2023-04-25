@@ -1,7 +1,6 @@
 import {Component} from "react";
 import { MenuData } from "./MenuData";
-import "./NavBar.css";
-
+import "./NavBar.css"; 
 
 class Navbar extends Component {
     render() {
@@ -29,3 +28,4 @@ class Navbar extends Component {
 }
 
 export default Navbar
+

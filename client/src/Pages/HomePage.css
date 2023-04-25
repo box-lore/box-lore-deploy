@@ -1,5 +1,7 @@
 .HomePage {
-    background-color: black;
+    background-color: rgb(17, 16, 16);
+    background-image: url('https://wallpaperaccess.com/full/1767833.jpg');
+    
    
   }
 
@@ -9,8 +11,19 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
+    
   }
   
   .spacing {
     height: 20px;
   }
+
+  .Footer {
+    background-color: #cf7412;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  

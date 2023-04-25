@@ -24,8 +24,8 @@ function UpcomingGames() {
       }
     
       return (
-        <div>
-          <h2>Recent Basketball Games</h2>
+        <div >
+          <h2 style={{ color: 'grey' }}>Recent Basketball Games</h2>
           <table style={{ borderCollapse: 'collapse', width: '100%' }}>
             <thead>
               <tr>
@@ -53,7 +53,7 @@ function UpcomingGames() {
     
           {selectedGame && (
             <div>
-              <h3>{games.find(game => game.id === selectedGame).home_team.full_name} vs. {games.find(game => game.id === selectedGame).visitor_team.full_name} Box Score</h3>
+              <h3 style={{ color: 'grey' }}>{games.find(game => game.id === selectedGame).home_team.full_name} vs. {games.find(game => game.id === selectedGame).visitor_team.full_name} Box Score</h3>
               <table style={{ borderCollapse: 'collapse', width: '100%' }}>
                 <thead>
                   <tr>

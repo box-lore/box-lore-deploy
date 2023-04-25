@@ -1,15 +1,16 @@
 .TeamDashHeaders{
     border: 1px solid black;
     opacity: 1.0;
+    
+    
 }
 
-.TeamDashHeaders:hover{
 
-}
 
 .TeamDashValues{
     border: 1px solid grey;
-    background-color: rgba(210,215,211,0.25);
+    background-color: rgba(87, 89, 88, 0.25);
+    
 }
 
 .TeamDashValues:hover{
