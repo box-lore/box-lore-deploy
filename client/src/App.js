@@ -4,6 +4,7 @@ import React from 'react';
 import AboutPage from './Pages/AboutPage.js';
 import HomePage from './Pages/HomePage.js';
 import TeamDashPage from './Pages/TeamDashPage';
+import BettingDashPage from './Pages/BettingDashPage';
 import SignupPage from './Pages/SignupPage/SignupPage';
 import Layout from './Pages/Layout.js';
 
@@ -24,6 +25,7 @@ function App() {
               <Route path="aboutpage" element={<AboutPage />} />
               <Route path="homepage" element={<HomePage />} />
               <Route path="teamdashpage" element={<TeamDashPage />} />
+              <Route path="bettingdashpage" element={<BettingDashPage />}/>
               <Route path="signuppage" element={<SignupPage />}/>
             </Route>
           </Routes>

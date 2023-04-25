@@ -19,7 +19,7 @@ export const MenuData = [
     },
     {
         title: "Betting Dashboard ",
-        url: "#",
+        url: "bettingdashpage",
         cName: "nav-links",
         icon: "fa-solid fa-user-alt ",
     },
