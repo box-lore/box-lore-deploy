@@ -7,6 +7,7 @@ import TeamDashPage from './Pages/TeamDashPage';
 import SignupPage from './Pages/SignupPage/SignupPage';
 import Layout from './Pages/Layout.js';
 import Guide from './Components/Guide/Guide.js';
+import LoginPage from './Pages/LoginPage/LoginPage';
 
 import {
   // Navigation
@@ -27,6 +28,7 @@ function App() {
               <Route path="homepage" element={<HomePage />} />
               <Route path="teamdashpage" element={<TeamDashPage />} />
               <Route path="signuppage" element={<SignupPage />}/>
+              <Route path="loginpage" element={<LoginPage />}/>
             </Route>
           </Routes>
         </BrowserRouter>
