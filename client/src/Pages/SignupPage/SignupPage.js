@@ -36,7 +36,7 @@ const SignupPage = () => {
     {
       id: 3,
       name: "password",
-      type: "text",
+      type: "password",
       placeholder: "Password",
       label: "password",
       pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$#^&.*])[A-Za-z\\d$#^&.*]{5,}$",
@@ -99,6 +99,7 @@ const SignupPage = () => {
           <button id='submit'>Submit</button>
         </form>
       </div>
+      <div className='login-button'>Click Here to Login</div>
     </div>
   );
 };

@@ -8,7 +8,11 @@
 
 }
 
-/*
+.RecentGameBoxScore{
+    background-image: url('https://static.vecteezy.com/system/resources/previews/007/470/301/original/basketball-ball-on-dark-background-3d-render-free-photo.jpg');
+    background-size: cover;
+    color: white;
+}
 table {
     table-layout: auto;
     width:100%;

@@ -62,7 +62,7 @@ class TeamDash extends Component {
     }
     statsTable(){
         return(
-            <table>
+            <table className = "TeamDashtable">
             <thead>
                 <th>Team</th>
                 <th>W</th>
@@ -82,7 +82,7 @@ class TeamDash extends Component {
                 <th>BLK</th>
                 <th></th>
             </thead>
-            <tbody>
+            <tbody className = "TeamDashBody">
                 {allTeams.map(currTeam =>(
                     this.state.seasonData.map(teamSeason => (
                         <tr className = "TeamDashValues">

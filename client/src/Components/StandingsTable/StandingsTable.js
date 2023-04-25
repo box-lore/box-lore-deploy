@@ -50,10 +50,10 @@ class StandingsTable extends Component {
     {
         return (
             <div className="StandingsTable">
-                <button onClick={this.isClicked}>
+                <button className = "StandingsButton" onClick={this.isClicked}>
                     {this.checkState(this.state.toggle)}
                 </button>
-                <table>
+                <table  className = "StandingsBody">
                     <tr className="Headers">
                         <th>#</th>
                         <th></th>
@@ -66,10 +66,10 @@ class StandingsTable extends Component {
                         return (
                             <tr className="Values" key={key}>
                                 <td>{val.position}</td>
-                                <td><img
+                                <td className = "teamLogo"><img
+                                    width={150}
+                                    height={100}
                                     src={val.team.logo}
-                                    width={50}
-                                    height={'auto'}
                                     alt="new"
                                 /></td>
                                 <td>{val.team.name}</td>

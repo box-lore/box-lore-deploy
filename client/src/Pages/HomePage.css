@@ -1,11 +1,11 @@
 .HomePage {
     background-color: rgb(17, 16, 16);
     background-image: url('https://wallpaperaccess.com/full/1767833.jpg');
-    
-   
   }
 
-  
+.StandingsTable{
+  width: 80%;
+}
   
   .container {
     max-width: 1000px;

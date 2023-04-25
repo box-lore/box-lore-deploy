@@ -1,32 +1,32 @@
-.StandingsTable {
-    align-items: center;
-    width: 65%;
-    font-family: "Trebuchet MS";
-    font-size: 20px;
-    font-stretch: expanded;
-    
+.StandingsTable{
 }
 
-button{
+.StandingsBody {
+    align-items: center;
+    width: 80%;
+    font-family: "Trebuchet MS";
+    font-size: 18px;
+    font-stretch: expanded;
+}
+
+.StandingsButton{
+    margin-right: 220px;
     transition-duration: 0.4s;
-    border-radius: 1px;
-    width: 100%;
+    width: 80%;
     height: 50px;
     color: rgb(253, 244, 244);
     background-color: rgba(239, 128, 9, 0.73);
-    border: 3px solid rgb(1, 1, 1);
+    border: 2px solid rgb(1, 1, 1);
     box-shadow: 0 30px 50px rgba(197, 195, 195, 0.25);
-    font-size: 29px;
+    font-size: 26px;
     color:rgb(1, 1, 1)
 }
 
 button:hover {
-    border-radius: 1px;
-    width: 97%;
+    width: 80%;
     height: 50px;
-    color: rgb(115, 109, 109);
-    background-color: rgb(10, 10, 10);
-    border: 5px solid rgb(10, 9, 9);
+    background-color: rgba(248, 134, 13, 0.73);
+    border: 4px solid rgb(10, 9, 9);
     box-shadow: 0 30px 50px rgb(190, 183, 183);
     font-size: 22px;
 }
@@ -46,6 +46,7 @@ table {
     background-size: cover;
     color: aliceblue;
     background-attachment: fixed;
+    font-size: 28px;
 }
 
 .Headers{
@@ -55,14 +56,20 @@ table {
 
 .Values{
     border: 1px solid rgb(8, 7, 7);
+    font-size: 18px;
 }
 
 .Values:hover{
     box-shadow: 0 3px 8px rgba(14, 14, 14, 0.25);
-    background-color: rgb(155, 152, 152);
+    background-color: rgb(117, 112, 112);
 }
 
-tr {
+.teamLogo{
+    width: 10%;
+    height: 10%;
+}
+
+.Values {
     border-bottom: 1px solid rgb(13, 13, 13);
 }
 
