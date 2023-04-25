@@ -6,6 +6,7 @@ import HomePage from './Pages/HomePage.js';
 import TeamDashPage from './Pages/TeamDashPage';
 import SignupPage from './Pages/SignupPage/SignupPage';
 import Layout from './Pages/Layout.js';
+import Guide from './Components/Guide/Guide.js';
 
 import {
   // Navigation
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
               <Route path="aboutpage" element={<AboutPage />} />
+              <Route path="guide" element={<Guide />} />
               <Route path="homepage" element={<HomePage />} />
               <Route path="teamdashpage" element={<TeamDashPage />} />
               <Route path="signuppage" element={<SignupPage />}/>
