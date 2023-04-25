@@ -99,7 +99,7 @@ const SignupPage = () => {
           <button id='submit'>Submit</button>
         </form>
       </div>
-      <div className='login-button'>Click Here to <a href="../LoginPage/LoginPage.js">Log In</a></div>
+      <div className='login-button'>Click Here to Login</div>
     </div>
   );
 };
