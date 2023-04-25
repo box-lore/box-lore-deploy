@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import './UpcomingGames.css'
 
 function UpcomingGames() {
     
@@ -54,7 +55,7 @@ function UpcomingGames() {
           {selectedGame && (
             <div>
               <h3>{games.find(game => game.id === selectedGame).home_team.full_name} vs. {games.find(game => game.id === selectedGame).visitor_team.full_name} Box Score</h3>
-              <table style={{ borderCollapse: 'collapse', width: '100%' }}>
+              <table className='RecentGameBoxScore' style={{ borderCollapse: 'collapse', width: '100%' }}>
                 <thead>
                   <tr>
                     <th>Player</th>
@@ -64,9 +65,9 @@ function UpcomingGames() {
                     <th>Assists</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody >
                   {boxScoreData.map(player => (
-                    <tr key={player.player.id}>
+                    <tr key={player.player.id} >
                       <td>{player.player.first_name} {player.player.last_name}</td>
                       <td>{player.team.full_name}</td>
                       <td>{player.pts}</td>

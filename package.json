@@ -26,13 +26,16 @@
     "csv-writer": "^1.6.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "fa": "^1.0.1",
+    "fontawesome": "^5.6.3",
     "fs": "^0.0.1-security",
     "get-apis": "^1.0.0",
     "mongodb": "^5.3.0",
     "mongoose": "^7.0.3",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.20",
-    "phpmyadmin": "^0.0.1-security"
+    "phpmyadmin": "^0.0.1-security",
+    "react-icons": "^4.8.0"
   },
   "bugs": {
     "url": "https://github.com/box-lore/box-lore-deploy/issues"

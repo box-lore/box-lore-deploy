@@ -1,9 +1,10 @@
 .HomePage {
-    background-color: black;
-   
-  }
+    background-color: rgb(19, 18, 18);
+}
 
-  
+.StandingsTable{
+  width: 80%;
+}
   
   .container {
     max-width: 1000px;
