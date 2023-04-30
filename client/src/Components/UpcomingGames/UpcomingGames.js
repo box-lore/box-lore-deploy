@@ -25,7 +25,7 @@ function UpcomingGames() {
       }
     
       return (
-        <div >
+        <div>
           <h2 style={{ color: 'grey' }}>Recent Basketball Games</h2>
           <table style={{ borderCollapse: 'collapse', width: '100%' }}>
             <thead>
@@ -52,7 +52,7 @@ function UpcomingGames() {
             </tbody>
           </table>
     
-          {selectedGame && (
+          {selectedGame && 
             <div>
               <h3 style={{ color: 'grey' }}>{games.find(game => game.id === selectedGame).home_team.full_name} vs. {games.find(game => game.id === selectedGame).visitor_team.full_name} Box Score</h3>
               <table style={{ borderCollapse: 'collapse', width: '100%' }}>
@@ -69,7 +69,7 @@ function UpcomingGames() {
                 </thead>
                 <tbody >
                   {boxScoreData.map(player => (
-                    <tr key={player.player.id} >
+                    <tr key={player.player.id}>
                       <td>{player.player.first_name} {player.player.last_name}</td>
                       <td>{player.team.full_name}</td>
                       <td>{player.pts}</td>
@@ -79,8 +79,9 @@ function UpcomingGames() {
                   ))}
                 </tbody>
               </table>
+              </table>
             </div>
-          )}
+          }
         </div>
       );
     }
