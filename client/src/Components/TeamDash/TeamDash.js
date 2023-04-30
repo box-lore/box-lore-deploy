@@ -62,8 +62,8 @@ class TeamDash extends Component {
     }
     statsTable(){
         return(
-            <table className = "TeamDashtable">
-            <thead>
+            <table className = "TeamDashTable">
+            <thead className = "TeamDashHeaders">
                 <th>Team</th>
                 <th>W</th>
                 <th>L</th>

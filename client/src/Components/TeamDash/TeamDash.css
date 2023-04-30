@@ -1,11 +1,8 @@
 .TeamDashHeaders{
     border: 1px solid black;
     opacity: 1.0;
-    
-    
+    font-size: 20px;
 }
-
-
 
 .TeamDashBody{
     
@@ -14,7 +11,7 @@
 .TeamDashValues{
     border: 1px solid grey;
     background-color: rgba(87, 89, 88, 0.25);
-    
+    font-size: 17px;
 }
 
 .TeamDashValues:hover{
