@@ -17,6 +17,8 @@ app.use("/", require("./routes/StandingsRoute.js"));
 
 // User Registration
 app.use("/", require("./routes/userRoute.js"));
+// User Authorization
+app.use("/", require("./routes/authRoute.js"));
 
 // Using mongoose to connect to MongoDB box-lore collection
 const mongoURI = `${process.env.DB_CONNECT}`;
@@ -45,4 +47,6 @@ app.get('/getteamseason/:title', async (req, res) => {
         res.status(500).json({ message: error.message });
     }
 });
+
+
 

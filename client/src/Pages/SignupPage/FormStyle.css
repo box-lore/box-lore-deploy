@@ -46,3 +46,7 @@ button{
 .login-button{
   margin-top: 10px;
 }
+
+#userLink:hover{
+  color: white;
+}
