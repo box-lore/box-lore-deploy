@@ -5,10 +5,10 @@ import AboutPage from './Pages/AboutPage.js';
 import HomePage from './Pages/HomePage.js';
 import TeamDashPage from './Pages/TeamDashPage';
 import BettingDashPage from './Pages/BettingDashPage';
-import SignupPage from './Pages/SignupPage/SignupPage';
+import SignupPage from './Pages/SignupPage';
 import Layout from './Pages/Layout.js';
 import Guide from './Components/Guide/Guide.js';
-import LoginPage from './Pages/LoginPage/LoginPage';
+import LoginPage from './Pages/LoginPage';
 
 import {
   // Navigation
